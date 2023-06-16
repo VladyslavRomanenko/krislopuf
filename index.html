@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -42,6 +42,7 @@
           type="text"
           placeholder="Введіть Ваше ім'я"
           name="name"
+          minlength="3"
         />
         <input
           class="form-input"
@@ -311,6 +312,7 @@
           type="text"
           placeholder="Введіть Ваше ім'я"
           name="name"
+          minlength="3"
         />
         <input
           class="form-input"
@@ -322,8 +324,26 @@
       </form>
     </section>
 
-    <section></section>
-
+    <section class="footer">
+      <p class="footer-text">
+        ТОВ «ДеліверіКомфорт», Одеса. Всі права захищені 2020-2023
+      </p>
+      <a
+        class="footer-link"
+        target="_blank"
+        href="https://buyitnowstore.store/gamak/politics.html"
+        >Політика конфіденційності</a
+      >
+    </section>
+    <div class="backdrop is-hidden">
+      <div class="thanks">
+        <h2 class="thanks-title">Дякуємо за замовлення!</h2>
+        <p class="thanks-title">
+          Наш менеджер скоро зв'яжеться з Вами! Очікуйте на дзвінок!
+        </p>
+        <a class="thanks-link">Повернутись назад</a>
+      </div>
+    </div>
     <script src="./js/script.js" type="module"></script>
   </body>
 </html>

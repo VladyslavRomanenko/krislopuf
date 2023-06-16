@@ -1,23 +1,33 @@
-const formRef = document.querySelector(".form");
-const nameRef = document.querySelector('[name="name"]');
-const phoneRef = document.querySelector('[name="phone"]');
+const formsRef = document.querySelectorAll(".form");
+const backdropRef = document.querySelector(".backdrop");
+const backRef = document.querySelector(".thanks-link");
 
-formRef.addEventListener("submit", (event) => {
-  event.preventDefault();
-  const name = nameRef.value.trim();
-  const phone = phoneRef.value.trim();
+formsRef.forEach((form) => {
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
 
-  if (name === "") {
-    alert("Будь ласка, введіть ваше ім'я.");
-    return;
-  }
+    const nameRef = form.elements["name"];
+    const phoneRef = form.elements["phone"];
 
-  if (phone.length < 10) {
-    alert("Будь ласка, введіть коректний номер телефону");
-    return;
-  }
+    const name = nameRef.value.trim();
+    const phone = phoneRef.value.trim();
 
-  formRef.reset();
-  console.log("Ім'я:", name);
-  console.log("Номер телефону:", phone);
+    if (name === "") {
+      alert("Будь ласка, введіть ваше ім'я.");
+      return;
+    }
+
+    if (phone.length < 10) {
+      alert("Будь ласка, введіть коректний номер телефону");
+      return;
+    }
+
+    backdropRef.classList.remove("is-hidden");
+
+    form.reset();
+  });
+});
+
+backRef.addEventListener("click", (event) => {
+  backdropRef.classList.add("is-hidden");
 });
